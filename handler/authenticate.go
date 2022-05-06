@@ -82,6 +82,28 @@ func ReAuthenticate(c *gin.Context) {
 	}
 	c.JSON(200, result)
 }
+func MProfile(c *gin.Context) {
+	parseData, _ := c.Get("body")
+	parse := parseData.(gjson.Result)
+	client := mojang.New()
+	var usernames []string
+	for _, v := range parse.Array() {
+		usernames = append(usernames, v.String())
+	}
+	multipleUUIDs, err := client.FetchMultipleUUIDs(usernames)
+	if err != nil {
+		c.Status(http.StatusForbidden)
+		return
+	}
+	var result []mojang.Profile
+	for k, v := range multipleUUIDs {
+		result = append(result, mojang.Profile{
+			UUID: v,
+			Name: k,
+		})
+	}
+	c.JSON(200, result)
+}
 
 func HasJoined(c *gin.Context) {
 	name, _ := c.GetQuery("username")

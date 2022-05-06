@@ -29,6 +29,7 @@ func main() {
 	})
 	r.GET("/sessionserver/session/minecraft/hasJoined", handler.HasJoined)
 	r.GET("/sessionserver/session/minecraft/profile/:uuid", handler.Profile)
+	r.POST("/api/profiles/minecraft", handler.MProfile)
 	meta := mojang.MetaInfo{
 		Meta: map[string]interface{}{
 			"serverName":              "antengye",
