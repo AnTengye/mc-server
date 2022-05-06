@@ -1,5 +1,11 @@
 package mojang
 
+// ProfileBase represents a whole player profile
+type ProfileBase struct {
+	UUID string `json:"id"`
+	Name string `json:"name"`
+}
+
 // Profile represents a whole player profile
 type Profile struct {
 	UUID       string            `json:"id"`

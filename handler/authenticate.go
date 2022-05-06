@@ -95,9 +95,9 @@ func MProfile(c *gin.Context) {
 		c.Status(http.StatusForbidden)
 		return
 	}
-	var result []mojang.Profile
+	var result []mojang.ProfileBase
 	for k, v := range multipleUUIDs {
-		result = append(result, mojang.Profile{
+		result = append(result, mojang.ProfileBase{
 			UUID: v,
 			Name: k,
 		})
