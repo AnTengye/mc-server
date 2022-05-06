@@ -115,11 +115,11 @@ func HasJoined(c *gin.Context) {
 	client := mojang.New()
 	profile, err := client.FetchProfile(uid, false)
 	if err != nil {
-		profile = &mojang.Profile{
-			UUID:       uid,
-			Name:       name,
-			Properties: nil,
-		}
+		c.JSON(200, mojang.ProfileBase{
+			UUID: uid,
+			Name: name,
+		})
+		return
 	}
 	c.JSON(200, profile)
 }
@@ -144,11 +144,11 @@ func Profile(c *gin.Context) {
 	}
 	profile, err := client.FetchProfile(uid, unsigned)
 	if err != nil {
-		profile = &mojang.Profile{
-			UUID:       uid,
-			Name:       name,
-			Properties: nil,
-		}
+		c.JSON(200, mojang.ProfileBase{
+			UUID: uid,
+			Name: name,
+		})
+		return
 	}
 	c.JSON(200, profile)
 }
