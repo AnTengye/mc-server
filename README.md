@@ -1,11 +1,11 @@
 # mc-server
-ÓÃgoÊµÏÖµÄÍâÖÃÈÏÖ¤·şÎñÆ÷£¬ÊµÏÖ¹æ·¶¼û[Yggdrasil ·şÎñ¶Ë](https://github.com/yushijinhun/authlib-injector/wiki)¡£
+ç”¨goå®ç°çš„å¤–ç½®è®¤è¯æœåŠ¡å™¨ï¼Œå®ç°è§„èŒƒè§[Yggdrasil æœåŠ¡ç«¯](https://github.com/yushijinhun/authlib-injector/wiki)ã€‚
 
-## ÏîÄ¿Ä¿µÄ
-ºÍÅóÓÑÒ»ÆğÍæminecraftÊ±£¬Ò»¸öÅóÓÑµÄÕı°æÕËºÅÍ»È»ÎŞ·¨Í¨¹ımicrosoftÑéÖ¤¡£
-ÎªÁË¼Ì³ĞÔ­ÓĞµÄÊı¾İ£¬ËìÍ¨¹ıÍâÖÃÈÏÖ¤·şÎñÆ÷µÄ·½Ê½ÈÆ¹ı¹Ù·½Ğ£Ñé£¬À´´ïµ½Õı°æºÍ¡±¼ÙÕı°æ¡°¹²Í¬ÓÎÍæµÄÄ¿µÄ¡£
+## é¡¹ç›®ç›®çš„
+å’Œæœ‹å‹ä¸€èµ·ç©minecraftæ—¶ï¼Œä¸€ä¸ªæœ‹å‹çš„æ­£ç‰ˆè´¦å·çªç„¶æ— æ³•é€šè¿‡microsoftéªŒè¯ã€‚
+ä¸ºäº†ç»§æ‰¿åŸæœ‰çš„æ•°æ®ï¼Œé‚é€šè¿‡å¤–ç½®è®¤è¯æœåŠ¡å™¨çš„æ–¹å¼ç»•è¿‡å®˜æ–¹æ ¡éªŒï¼Œæ¥è¾¾åˆ°æ­£ç‰ˆå’Œâ€å‡æ­£ç‰ˆâ€œå…±åŒæ¸¸ç©çš„ç›®çš„ã€‚
 
-## ÒÑÊµÏÖAPI
+## å·²å®ç°API
 - POST /authserver/authenticate
 - POST /authserver/refresh
 - POST /authserver/validate
@@ -15,37 +15,39 @@
 - GET /sessionserver/session/minecraft/hasJoined?username={username}&serverId={serverId}&ip={ip}
 - GET /sessionserver/session/minecraft/profile/{uuid}?unsigned={unsigned}
 
-## Ê¹ÓÃ
-### Ò»¡¢Æô¶¯ÍâÖÃÈÏÖ¤·şÎñÆ÷
-À­È¡´úÂë
+## ä½¿ç”¨
+### ä¸€ã€å¯åŠ¨å¤–ç½®è®¤è¯æœåŠ¡å™¨
+æ‹‰å–ä»£ç 
 
-ĞŞ¸Äconfig/userid.goÖĞµÄUserInfo¡£
+    git clone https://github.com/AnTengye/mc-server.git
 
-¸ñÊ½Îª`
-"minecraftÄÚµÄ½ÇÉ«Ãû"£º"uuid"
+ä¿®æ”¹config/userid.goä¸­çš„UserInfoã€‚
+
+æ ¼å¼ä¸º`
+"minecraftå†…çš„è§’è‰²å"ï¼š"uuid"
 `
 
-PS:Õı°æÓÃ»§UUID¿ÉÍ¨¹ı¸ÃÁ´½Ó²éÑ¯£ºhttps://mcuuid.net/
+PS:æ­£ç‰ˆç”¨æˆ·UUIDå¯é€šè¿‡è¯¥é“¾æ¥æŸ¥è¯¢ï¼šhttps://mcuuid.net/
 
-Ö´ĞĞÃüÁî
+æ‰§è¡Œå‘½ä»¤
 
     go build
     
     ./mc-server.exe
 
-Ä¬ÈÏÆô¶¯ÔÚhttp://127.0.0.1:8899/
-### ¶ş¡¢ÅäÖÃmc·şÎñÆ÷
-ÏÂÔØauthlib-injector£ºhttps://authlib-injector.yushi.moe/
+é»˜è®¤å¯åŠ¨åœ¨http://127.0.0.1:8899/
+### äºŒã€é…ç½®mcæœåŠ¡å™¨
+ä¸‹è½½authlib-injectorï¼šhttps://authlib-injector.yushi.moe/
 
-ÇëÏÈ½«·şÎñÆ÷ÅäÖÃÎÄ¼ş£¨Ò»°ãÎª server.properties£©ÖĞ online-mode Ò»ÏîµÄÖµÉèÎª true£¬È»ºóÔÚÄãµÄ·şÎñ¶ËµÄÆô¶¯Ö¸ÁîµÄ -jar ²ÎÊıÇ°Ìí¼ÓÈçÏÂ²ÎÊı£º
+è¯·å…ˆå°†æœåŠ¡å™¨é…ç½®æ–‡ä»¶ï¼ˆä¸€èˆ¬ä¸º server.propertiesï¼‰ä¸­ online-mode ä¸€é¡¹çš„å€¼è®¾ä¸º trueï¼Œç„¶ååœ¨ä½ çš„æœåŠ¡ç«¯çš„å¯åŠ¨æŒ‡ä»¤çš„ -jar å‚æ•°å‰æ·»åŠ å¦‚ä¸‹å‚æ•°ï¼š
 
 -javaagent:authlib-injector-1.1.44.jar=http://127.0.0.1:8899/
 
-²Î¿¼£º[ÔÚ Minecraft ·şÎñ¶ËÊ¹ÓÃ authlib injector](https://github.com/yushijinhun/authlib-injector/wiki/%E5%9C%A8-Minecraft-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BD%BF%E7%94%A8-authlib-injector)
+å‚è€ƒï¼š[åœ¨ Minecraft æœåŠ¡ç«¯ä½¿ç”¨ authlib injector](https://github.com/yushijinhun/authlib-injector/wiki/%E5%9C%A8-Minecraft-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BD%BF%E7%94%A8-authlib-injector)
 
-### Èı¡¢ÅäÖÃmcÆô¶¯Æ÷
+### ä¸‰ã€é…ç½®mcå¯åŠ¨å™¨
 
-1. ´ò¿ª HMCL 3 µÄ¡¸ĞÂ½¨ÓÎÏ·ÕË»§¡¹½çÃæ£¬Ñ¡ÔñµÇÂ¼·½Ê½Îª¡¸ÍâÖÃµÇÂ¼£¨authlib-injector£©¡¹¡£
-2. µã»÷¡¸ÈÏÖ¤·şÎñÆ÷¡¹ÅÔµÄ¼ÓºÅ¡¸+¡¹£¬ÊäÈë ÉÏÃæÆô¶¯µÄÈÏÖ¤·şÎñÆ÷ µÄ API µØÖ·(http://127.0.0.1:8899/ )£¬µã»÷¡¸ÏÂÒ»²½¡¹£¬µÈ´ıÊ¶±ğ³ö ·şÎñÆ÷ĞÅÏ¢ ºóµã»÷¡¸Íê³É¡¹
-3. ÔÚ¡¸ÈÏÖ¤·şÎñÆ÷¡¹²Ëµ¥ÖĞÑ¡Ôñ ¸Õ¸ÕÌí¼ÓµÄ·şÎñÆ÷£¬ÌîĞ´minecraftµÄ½ÇÉ«ÃûºÍÃÜÂë£¨Ëæ±ãÌî£©¡£
-4. Ñ¡ÔñÄãµÄÓÎÏ·½ÇÉ«£¬Èç¹ûÄãÖ»ÓĞÒ»¸ö½ÇÉ«£¬ÄÇÃ´ HMCL 3 »áÄ¬ÈÏÑ¡ÔñÄÇ¸öÎ¨Ò»µÄ½ÇÉ«¡£
+1. æ‰“å¼€ HMCL 3 çš„ã€Œæ–°å»ºæ¸¸æˆè´¦æˆ·ã€ç•Œé¢ï¼Œé€‰æ‹©ç™»å½•æ–¹å¼ä¸ºã€Œå¤–ç½®ç™»å½•ï¼ˆauthlib-injectorï¼‰ã€ã€‚
+2. ç‚¹å‡»ã€Œè®¤è¯æœåŠ¡å™¨ã€æ—çš„åŠ å·ã€Œ+ã€ï¼Œè¾“å…¥ ä¸Šé¢å¯åŠ¨çš„è®¤è¯æœåŠ¡å™¨ çš„ API åœ°å€(http://127.0.0.1:8899/ )ï¼Œç‚¹å‡»ã€Œä¸‹ä¸€æ­¥ã€ï¼Œç­‰å¾…è¯†åˆ«å‡º æœåŠ¡å™¨ä¿¡æ¯ åç‚¹å‡»ã€Œå®Œæˆã€
+3. åœ¨ã€Œè®¤è¯æœåŠ¡å™¨ã€èœå•ä¸­é€‰æ‹© åˆšåˆšæ·»åŠ çš„æœåŠ¡å™¨ï¼Œå¡«å†™minecraftçš„è§’è‰²åå’Œå¯†ç ï¼ˆéšä¾¿å¡«ï¼‰ã€‚
+4. é€‰æ‹©ä½ çš„æ¸¸æˆè§’è‰²ï¼Œå¦‚æœä½ åªæœ‰ä¸€ä¸ªè§’è‰²ï¼Œé‚£ä¹ˆ HMCL 3 ä¼šé»˜è®¤é€‰æ‹©é‚£ä¸ªå”¯ä¸€çš„è§’è‰²ã€‚
